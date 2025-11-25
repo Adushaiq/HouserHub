@@ -17,50 +17,22 @@ const HeaderTwo = ({ style_1, style_2 }: any) => {
    const [offCanvas, setOffCanvas] = useState<boolean>(false);
    const [isSearch, setIsSearch] = useState<boolean>(false);
 
+   const GetInTouchHandler = () => {
+      window.location.href = '/contact';
+   };
+
    return (
       <>
          <div className={`theme-main-menu menu-overlay sticky-menu ${style_2 ? "menu-style-four" : style_1 ? "menu-style-three" : "menu-style-two"} ${sticky ? "fixed" : ""}`}>
             <div className={`inner-content ${style_2 ? "gap-two" : "gap-one"}`}>
                <div className="top-header position-relative">
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex justify-content-between">
                      <div className="logo order-lg-0">
                         <Link href="/" className="d-flex align-items-center">
                            <Image src={style_2 ? logo_3 : style_1 ? logo_2 : logo_1} alt="" width={150} />
                         </Link>
                      </div>
-
-                     <div className="right-widget ms-auto me-3 me-lg-0 order-lg-3">
-                        <ul className="d-flex align-items-center style-none">
-                           {!style_2 ? (<><li className="d-flex align-items-center login-btn-one">
-                              <i className="fa-regular fa-lock"></i>
-                              <Link href="#" data-bs-toggle="modal" data-bs-target="#loginModal" className="fw-500 tran3s">
-                                 Login <span className="d-none d-sm-inline-block"> {""} / Sign up</span></Link>
-                           </li>
-                              <li className="d-none d-md-inline-block ms-3 ms-xl-4 me-xl-4">
-                                 <Link href="dashboard/add-property" className={style_1 ? "btn-ten" : "btn-two rounded-0"} target="_blank">
-                                    <span>Add Listing</span> <i className="fa-thin fa-arrow-up-right"></i>
-                                 </Link>
-                              </li>
-                              <li className="d-none d-xl-block">
-                                 <button onClick={() => setOffCanvas(true)} style={{ cursor: "pointer" }} className="sidenavbtn rounded-circle tran3s" type="button">
-                                    <i className="fa-sharp fa-light fa-bars-filter"></i>
-                                 </button>
-                              </li></>) : (<>
-                                 <li className="d-none d-md-flex align-items-center login-btn-one me-4 me-xxl-5">
-                                    <i className="fa-regular fa-phone-volume"></i>
-                                    <Link href="tel:+210-0000-0000" className="tran3s">+210-0000-0000</Link>
-                                 </li>
-                                 <li>
-                                    <Link href="#" data-bs-toggle="modal" data-bs-target="#loginModal" className="login-btn-two rounded-circle tran3s d-flex align-items-center justify-content-center"><i className="fa-regular fa-lock"></i></Link>
-                                 </li>
-                                 <li>
-                                    <a onClick={() => setIsSearch(true)} style={{ cursor: "pointer" }} className="search-btn-one rounded-circle tran3s d-flex align-items-center justify-content-center"><i className="bi bi-search"></i></a>
-                                 </li>
-                              </>)}
-                        </ul>
-                     </div>
-
-                     <nav className="navbar navbar-expand-lg p0 ms-lg-5 order-lg-2">
+                     <nav className="navbar navbar-expand-lg p0 order-lg-2">
                         <button className="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                            aria-label="Toggle navigation">
@@ -70,6 +42,27 @@ const HeaderTwo = ({ style_1, style_2 }: any) => {
                            <NavMenu />
                         </div>
                      </nav>
+                     <div className={""}>
+                        <div className="input-box-one lg-mt-10">
+                           <button
+                              onClick={GetInTouchHandler}
+                              className="fw-500 tran3s w-100"
+                              style={{
+                                 height: '50px',
+                                 color: '#fff',
+                                 padding: '0 30px',
+                                 background: '#FF6725',
+                                 borderRadius: '10px',
+                                 border: 'none',
+                                 cursor: 'pointer'
+                              }}
+                              onMouseEnter={(e) => e.currentTarget.style.background = '#000'}
+                              onMouseLeave={(e) => e.currentTarget.style.background = '#FF6725'}
+                           >
+                              Get in touch
+                           </button>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
