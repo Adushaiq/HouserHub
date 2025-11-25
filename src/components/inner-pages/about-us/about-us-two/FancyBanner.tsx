@@ -13,9 +13,9 @@ const FancyBanner = () => {
                <div className="row align-items-end">
                   <div className="col-xl-6 col-lg-7 col-md-7">
                      <div className="pb-80 lg-pb-40">
-                        <h3>Start your Journey as <span className="fw-normal fst-italic">A Retailer.</span></h3>
+                        <h3>Partner with <span className="fw-normal fst-italic">Houser Hub</span> Today</h3>
                         <div className="d-inline-flex flex-wrap align-items-center position-relative mt-15">
-                           <Link href="/agent" className="btn-eight mt-10 me-4"><span>Become an Agent</span></Link>
+                           <Link href="/contact" className="btn-eight mt-10 me-4"><span>Join Our Team</span></Link>
                            <Link href="/contact" className="btn-two rounded-0 border-0 mt-10"><span>Contact us</span></Link>
                            <Image src={fanchyBannerShape_1} alt="" className="lazy-img shapes shape_02 wow fadeInRight" />
                         </div>

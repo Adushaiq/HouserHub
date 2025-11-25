@@ -91,7 +91,7 @@ const FancyBannerOne = () => {
                <div className="row">
                   <div className="col-xl-7 col-lg-8 m-auto">
                      <div className="title-one text-center pe-xxl-2 ps-xxl-2">
-                        <h2 className="font-garamond text-white">Where you are, You will find us every <em>where <span>easily</span></em> <span className="star-shape"><Image src={titleShape} alt="" className="lazy-img" /></span></h2>
+                        <h2 className="font-garamond text-white">Houser Hub Serves <em>Communities <span>Nationwide</span></em> <span className="star-shape"><Image src={titleShape} alt="" className="lazy-img" /></span></h2>
                      </div>
                   </div>
                </div>
@@ -123,15 +123,15 @@ const FancyBannerOne = () => {
                </div>
 
                <div className="text-slide-wrapper">
-						<div className="marquee">
-						  <p>
-							Dubai . America . Canada .
-						  </p>
-						  <p>
-							Dubai . America . Canada .
-						  </p>
-						</div>
-					</div>
+                  <div className="marquee">
+                     <p>
+                        Dubai . America . Canada .
+                     </p>
+                     <p>
+                        Dubai . America . Canada .
+                     </p>
+                  </div>
+               </div>
             </div>
          </div>
       </div>

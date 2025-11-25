@@ -13,8 +13,8 @@ const BLockFeatureTwo = () => {
          <div className="bg-pink-two position-relative z-1 pt-140 xl-pt-100 lg-pt-80 pb-150 xl-pb-120 lg-pb-100">
             <div className="container">
                <div className="title-one text-center mb-70 xl-mb-40 lg-mb-20">
-                  <h2 className="font-garamond star-shape"><span className="star-shape"><Image src={titleShape} alt="" className="lazy-img" /></span> Buy, Rend & Sell</h2>
-                  <p className="fs-22 mt-xs color-dark">Over 745K listings of apartments, lots, plots - available today.</p>
+                  <h2 className="font-garamond star-shape"><span className="star-shape"><Image src={titleShape} alt="" className="lazy-img" /></span> Houser Hub Services</h2>
+                  <p className="fs-22 mt-xs color-dark">Comprehensive real estate solutions for all your needs.</p>
                </div>
 
                <div className="row justify-content-center gx-xxl-5">
@@ -40,11 +40,11 @@ const BLockFeatureTwo = () => {
                <div className="row">
                   <div className="col-lg-6">
                      <div className="title-one md-mb-30 pe-xxl-4 wow fadeInLeft">
-                        <h2 className="font-garamond text-white star-shape">Easily Purchase, Sell, or Lease listings. <span className="star-shape"><Image src={featureShape_3} alt="" className="lazy-img" /></span></h2>
+                        <h2 className="font-garamond text-white star-shape">Making Real Estate <em>Simple and Accessible</em> <span className="star-shape"><Image src={featureShape_3} alt="" className="lazy-img" /></span></h2>
                      </div>
                   </div>
                   <div className="col-xxl-5 col-lg-6 ms-auto">
-                     <p className="text-white fs-24 m0 lh-lg  wow fadeInRight">Your leading real estate advocate, transforming houses into dreams. Trust us to expertly guide you home</p>
+                     <p className="text-white fs-24 m0 lh-lg  wow fadeInRight">At Houser Hub, we're committed to excellence in real estate. Our dedicated team works tirelessly to connect you with your ideal property.</p>
                   </div>
                </div>
 

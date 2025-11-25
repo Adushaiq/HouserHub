@@ -14,7 +14,7 @@ const BLockFeatureOne = () => {
                <div className="col-xl-6 col-lg-7 order-lg-last wow fadeInRight">
                   <div className="ms-xxl-5 ps-xl-4 ps-lg-5 md-mb-50">
                      <div className="title-one mb-45 lg-mb-20">
-                        <h2 className="font-garamond star-shape">Find Your Preferable Match Easily. <span className="star-shape"><Image src={titleShape} alt="" className="lazy-img" /></span></h2>
+                        <h2 className="font-garamond star-shape">Your Trusted Partner in <em>Real Estate</em> <span className="star-shape"><Image src={titleShape} alt="" className="lazy-img" /></span></h2>
                      </div>
                      <div className="accordion-style-three">
                         <div className="accordion" id="accordionThree">
@@ -37,20 +37,20 @@ const BLockFeatureOne = () => {
                <div className="row justify-content-center">
                   <div className="col-md-4 col-sm-6">
                      <div className="counter-block-two text-center dark mt-30">
-                        <div className="main-count sm font-garamond fw-500"><span className="counter"><Count number={720} /></span>k+</div>
-                        <p className="fs-20 mt-15 md-mt-10">Project handover</p>
+                        <div className="main-count sm font-garamond fw-500">Buy</div>
+                        <p className="fs-20 mt-15 md-mt-10">Property Sales</p>
                      </div>
                   </div>
                   <div className="col-md-4 col-sm-6">
                      <div className="counter-block-two text-center dark mt-30">
-                        <div className="main-count sm font-garamond fw-500"><span className="counter"><Count number={1.3} /></span>%</div>
-                        <p className="fs-20 mt-15 md-mt-10">Low Interest</p>
+                        <div className="main-count sm font-garamond fw-500">Rent</div>
+                        <p className="fs-20 mt-15 md-mt-10">Rental Services</p>
                      </div>
                   </div>
                   <div className="col-md-4 col-sm-6">
                      <div className="counter-block-two text-center dark mt-30">
-                        <div className="main-count sm font-garamond fw-500"><span className="counter">{<Count number={1.9} />}</span>mil+</div>
-                        <p className="fs-20 mt-15 md-mt-10">Happy customers</p>
+                        <div className="main-count sm font-garamond fw-500">Sell</div>
+                        <p className="fs-20 mt-15 md-mt-10">Listing Services</p>
                      </div>
                   </div>
                </div>

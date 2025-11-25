@@ -39,34 +39,34 @@ const BLockFeatureTwo = () => {
                         </div>
                      </div>
                   </div>
-                  
+
                   <div className="col-xl-5 col-lg-6">
                      <div className="block-two ps-xxl-5 md-mt-100">
                         <div className="bg-wrapper wow fadeInRight">
-                           <p className="fs-24 fst-italic pe-xl-5">“Your premier partner in real estate. Transforming properties into dreams. Let us guide you home with expertise.”</p>
+                           <p className="fs-24 fst-italic pe-xl-5">"At Houser Hub, we're dedicated to making your real estate journey seamless and successful. Your dream home is our mission."</p>
                            <div className="counter-wrapper pb-40 mt-45 lg-mt-20 mb-60 lg-mb-20">
                               <div className="row">
                                  <div className="col-6">
                                     <div className="counter-block-one mt-20">
-                                       <div className="main-count fw-500 color-dark">$<span className="counter"><Count number={7} /></span>bil+</div>
-                                       <span>Project Handover</span>
+                                       <div className="main-count fw-500 color-dark">Residential</div>
+                                       <span>Properties</span>
                                     </div>
                                  </div>
                                  <div className="col-6">
                                     <div className="counter-block-one mt-20">
-                                       <div className="main-count fw-500 color-dark"><span className="counter"><Count number={1.9} /></span>mil+</div>
-                                       <span>Happy Customers</span>
+                                       <div className="main-count fw-500 color-dark">Commercial</div>
+                                       <span>Real Estate</span>
                                     </div>
                                  </div>
                               </div>
                            </div>
                            <ul className="list-style-one fs-22 color-dark style-none">
-                              <li>Loan &amp; low Interest facility</li>
-                              <li>100k+ Property Listing  added & updated</li>
+                              <li>Financing options & guidance available</li>
+                              <li>Extensive property listings regularly updated</li>
                               <li>Expert agent consultation</li>
                            </ul>
                            <div className="mt-70 lg-mt-50">
-                              <Link href="/about_us_02" className="btn-five md"><span>Learn More</span> <i className="bi bi-arrow-up-right"></i></Link>
+                              <Link href="/about_us" className="btn-five md"><span>Learn More</span> <i className="bi bi-arrow-up-right"></i></Link>
                            </div>
                         </div>
                      </div>
