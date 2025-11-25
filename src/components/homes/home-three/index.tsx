@@ -20,7 +20,7 @@ const HomeThree = () => {
       <PropertyOne />
       <PropertyTwo style={false} />
       <BLockFeatureTwo />
-      <FancyBannerOne />
+      {/* <FancyBannerOne /> */}
       {/* <Brand /> */}
       <FancyBannerTwo />
       <FooterTwo />

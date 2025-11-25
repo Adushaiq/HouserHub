@@ -42,7 +42,7 @@ interface DataType {
    tag?: string;
    data_delay_time?: string;
    btn?: string;
-   class_name?:string;
+   class_name?: string;
 }
 
 const feature_data: DataType[] = [
@@ -50,24 +50,24 @@ const feature_data: DataType[] = [
       id: 1,
       page: "home_1_feature_1",
       icon: featureIcon_1,
-      title: "Buy a home",
-      btn:"Find Home",
-      desc: "Explore HOZN 2 million+ homes and uncover your ideal living space.",
+      title: "BUY A HOME",
+      btn: "Find Home",
+      desc: "Explore homes and uncover your ideal living space.",
    },
    {
       id: 2,
       page: "home_1_feature_1",
       icon: featureIcon_2,
       title: "RENT A HOME",
-      btn:"Rent Home",
-      desc: "Discover a rental you'll love on HOZN, thanks to 35+ filters and tailored keywords.",
+      btn: "Rent Home",
+      desc: "Discover a rental you'll love on Houser Hub.",
    },
    {
       id: 3,
       page: "home_1_feature_1",
       icon: featureIcon_3,
       title: "SELL PROPERTY",
-      btn:"Sell Property",
+      btn: "Sell Property",
       desc: "List, sell, thrive – with our top-notch real estate agency. It’s super easy & fun.",
    },
 
@@ -121,7 +121,7 @@ const feature_data: DataType[] = [
    {
       id: 2,
       page: "home_1_feature_3",
-      class_name:"arrow position-relative",
+      class_name: "arrow position-relative",
       icon: feature3Icon_2,
       title: "Find Home",
       desc: "Complete your profile with all the info to get attention of client.",
@@ -256,7 +256,7 @@ const feature_data: DataType[] = [
       desc: "List, sell, thrive – with our top-notch real estate agency. It’s super easy & fun.",
       data_delay_time: "0.2s",
    },
-   
+
 
    // home_three_feature_2
 
@@ -346,25 +346,25 @@ const feature_data: DataType[] = [
    },
 
    // home_6_feature_1
-   
+
    {
       id: 1,
       page: "home_6_feature_1",
-      icon:feature7Icon_1,
+      icon: feature7Icon_1,
       title: "Property Insurance",
       desc: "Elit esse cillum dol fug nulla tur nos ullamo.",
-   }, 
+   },
    {
       id: 2,
       page: "home_6_feature_1",
-      icon:feature7Icon_2,
+      icon: feature7Icon_2,
       title: "Easy Payments",
       desc: "quis nostrud exerct ulla security finibus ne derived.",
-   }, 
+   },
    {
       id: 3,
       page: "home_6_feature_1",
-      icon:feature7Icon_3,
+      icon: feature7Icon_3,
       title: "Quick Process",
       desc: "Duis aute irure do reprehe de Cicero's voluptat velit.",
    },

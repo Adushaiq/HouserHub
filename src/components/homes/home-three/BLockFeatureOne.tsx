@@ -11,9 +11,9 @@ const BLockFeatureOne = () => {
       <div className="block-feature-seven position-relative z-1 mt-120 xl-mt-100">
          <div className="container container-large">
             <div className="position-relative">
-               <div className="text-center mb-30 wow fadeInUp">
+               {/* <div className="text-center mb-30 wow fadeInUp">
                   <div className="title-one mb-30 lg-mb-20">
-                     <h2 className="font-garamond star-shape">Why Choose <em>Houser Hub</em> for Your Real Estate Needs <span className="star-shape"><Image src={titleShape} alt="" className="lazy-img" /></span></h2>
+                     <h2 className="font-garamond star-shape">Why Choose <em>Houser Hub</em> for Your Real Estate Needs<span className="star-shape"><Image src={titleShape} alt="" className="lazy-img" /></span></h2>
                      <p className="fs-24 mt-xs">"Exceptional service and expertise made finding our home effortless!"</p>
                   </div>
                   <ul className="rating style-none d-flex justify-content-center">
@@ -22,7 +22,7 @@ const BLockFeatureOne = () => {
                      ))}
                      <li><span className="color-dark fw-500">5.0</span> Trusted by Our Clients</li>
                   </ul>
-               </div>
+               </div> */}
 
                <div className="row justify-content-center gx-xxl-5">
                   {feature_data.filter((items) => items.page === "home_1_feature_1").map((item) => (
