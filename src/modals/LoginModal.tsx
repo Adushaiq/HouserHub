@@ -3,13 +3,15 @@ import Link from "next/link"
 import LoginForm from "@/components/forms/LoginForm"
 import { useState } from "react"
 
-import loginIcon_1 from "@/assets/images/icon/google.png"
-import loginIcon_2 from "@/assets/images/icon/facebook.png"
 import RegisterForm from "@/components/forms/RegisterForm"
 
 const tab_title: string[] = ["Login", "Signup",];
 
-const LoginModal = ({ loginModal, setLoginModal }: any) => {
+interface LoginModalProps {
+   onLoginSuccess?: () => void;
+}
+
+const LoginModal = ({ onLoginSuccess }: LoginModalProps) => {
 
    const [activeTab, setActiveTab] = useState(0);
 
@@ -36,37 +38,17 @@ const LoginModal = ({ loginModal, setLoginModal }: any) => {
                            <div className={`tab-pane fade ${activeTab === 0 ? 'show active' : ''}`}>
                               <div className="text-center mb-20">
                                  <h2>Welcome Back!</h2>
-                                 <p className="fs-20 color-dark">Still don&apos;t have an account? <Link href="#">Sign up</Link></p>
+                                 <p className="fs-20 color-dark">Still don&apos;t have an account? <Link href="#" onClick={() => setActiveTab(1)}>Sign up</Link></p>
                               </div>
-                              <LoginForm />
+                              <LoginForm onSuccess={onLoginSuccess} />
                            </div>
 
                            <div className={`tab-pane fade ${activeTab === 1 ? 'show active' : ''}`}>
                               <div className="text-center mb-20">
                                  <h2>Register</h2>
-                                 <p className="fs-20 color-dark">Already have an account? <Link href="#">Login</Link></p>
+                                 <p className="fs-20 color-dark">Already have an account? <Link href="#" onClick={() => setActiveTab(0)}>Login</Link></p>
                               </div>
-                              <RegisterForm />
-                           </div>
-                        </div>
-
-                        <div className="d-flex align-items-center mt-30 mb-10">
-                           <div className="line"></div>
-                           <span className="pe-3 ps-3 fs-6">OR</span>
-                           <div className="line"></div>
-                        </div>
-                        <div className="row">
-                           <div className="col-sm-6">
-                              <Link href="#" className="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-                                 <Image src={loginIcon_1} alt="" />
-                                 <span className="ps-3">Signup with Google</span>
-                              </Link>
-                           </div>
-                           <div className="col-sm-6">
-                              <Link href="#" className="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-                                 <Image src={loginIcon_2} alt="" />
-                                 <span className="ps-3">Signup with Facebook</span>
-                              </Link>
+                              <RegisterForm onSuccess={onLoginSuccess} />
                            </div>
                         </div>
                      </div>

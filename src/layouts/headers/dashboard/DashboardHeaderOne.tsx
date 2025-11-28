@@ -1,9 +1,10 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link";
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { useAuth } from "@/context/AuthContext";
 
-import dashboardLogo from "@/assets/images/logo/logo_01.svg";
+import dashboardLogo from "@/assets/images/logo/HH-Logo.png";
 import dashboardIconActive_1 from "@/assets/images/dashboard/icon/icon_1_active.svg";
 import dashboardIcon_1 from "@/assets/images/dashboard/icon/icon_1.svg";
 import dashboardIconActive_2 from "@/assets/images/dashboard/icon/icon_2_active.svg";
@@ -28,13 +29,21 @@ import dashboardIcon_11 from "@/assets/images/dashboard/icon/icon_41.svg";
 
 const DashboardHeaderOne = ({ isActive, setIsActive }: any) => {
    const pathname = usePathname();
+   const router = useRouter();
+   const { logout } = useAuth();
+
+   const handleLogout = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      logout();
+      router.push('/');
+   };
 
    return (
       <aside className={`dash-aside-navbar ${isActive ? "show" : ""}`}>
          <div className="position-relative">
             <div className="logo d-md-block d-flex align-items-center justify-content-between plr bottom-line pb-30">
                <Link href="/dashboard-index">
-                  <Image src={dashboardLogo} alt="" />
+                  <Image src={dashboardLogo} alt="" width={200} height={200} />
                </Link>
                <button onClick={() => setIsActive(false)} className="close-btn d-block d-md-none"><i className="fa-light fa-circle-xmark"></i></button>
             </div>
@@ -105,7 +114,7 @@ const DashboardHeaderOne = ({ isActive, setIsActive }: any) => {
             </div> */}
 
             <div className="plr">
-               <Link href="#" className="d-flex w-100 align-items-center logout-btn">
+               <Link href="#" onClick={handleLogout} className="d-flex w-100 align-items-center logout-btn">
                   <div className="icon tran3s d-flex align-items-center justify-content-center rounded-circle"><Image src={dashboardIcon_11} alt="" /></div>
                   <span>Logout</span>
                </Link>

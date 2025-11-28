@@ -21,9 +21,9 @@ interface ContentType {
 const footer_content: ContentType = {
    title: "Our Newsletter",
    desc_1: "Get instant news by subscribe to our newsletter",
-   desc_2: "11910 Cairo Suite 210, Kafralshakh , Cairo, Egypt",
-   email: "Emile@gmail.com",
-   number: "+210 0000-0000",
+   desc_2: "Mumbai, Maharashtra, India",
+   email: "HouserHub@gmail.com",
+   number: "+91 123 456 7890",
    icon: ["facebook-f", "twitter", "instagram"],
 }
 
@@ -52,7 +52,7 @@ const FooterTwo = () => {
                      </div>
                   </div>
                </div>
-               
+
                <div className="row justify-content-between">
                   <div className="col-xl-3">
                      <div className="footer-intro position-relative z-1 pt-70 pb-150 lg-pb-20">

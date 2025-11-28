@@ -1,15 +1,15 @@
-import HeaderOne from "@/layouts/headers/HeaderOne"
+import HeaderTwo from "@/layouts/headers/HeaderTwo"
 import ListingDetailsOneArea from "./ListingDetailsOneArea"
 import FancyBanner from "@/components/common/FancyBanner"
-import FooterFour from "@/layouts/footers/FooterFour"
+import FooterTwo from "@/layouts/footers/FooterTwo"
 
 const ListingDetailsOne = () => {
   return (
     <>
-      <HeaderOne style={true} />
+      <HeaderTwo style_1={true} style_2={false} />
       <ListingDetailsOneArea />
       <FancyBanner />
-      <FooterFour />
+      <FooterTwo />
     </>
   )
 }

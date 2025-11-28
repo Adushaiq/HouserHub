@@ -6,8 +6,9 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
-import axios from "axios";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
+import { authService } from "@/services/api";
 
 
 import OpenEye from "@/assets/images/icon/icon_68.svg";
@@ -19,20 +20,25 @@ interface FormData {
   termsAccepted: boolean;
 }
 
-const RegisterForm = () => {
-  const router = useRouter(); 
+interface RegisterFormProps {
+  onSuccess?: () => void;
+}
+
+const RegisterForm = ({ onSuccess }: RegisterFormProps) => {
+  const router = useRouter();
+  const { login } = useAuth();
 
   const schema = yup
-  .object({
-    name: yup.string().required("Name is required"),
-    email: yup.string().required("Email is required").email("Invalid email"),
-    password: yup.string().required("Password is required"),
-    termsAccepted: yup
-      .boolean()
-      .oneOf([true], "You must accept the terms and conditions") 
-      .required(),
-  })
-  .required();
+    .object({
+      name: yup.string().required("Name is required"),
+      email: yup.string().required("Email is required").email("Invalid email"),
+      password: yup.string().required("Password is required"),
+      termsAccepted: yup
+        .boolean()
+        .oneOf([true], "You must accept the terms and conditions")
+        .required(),
+    })
+    .required();
 
 
   const {
@@ -54,18 +60,29 @@ const RegisterForm = () => {
   const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/signup", data);
+      // Use centralized auth service
+      const result = await authService.signup(data);
 
-      if (response.status === 201) {
-        toast.success("Registration successful! Redirecting to login...", {
+      if (result.token) {
+        // Store token and user data
+        login(result.token, result.user);
+
+        toast.success("Registration successful!", {
           position: "top-center",
         });
 
         reset();
-        setTimeout(() => router.push("/dashboard/dashboard-index"), 2000); 
+
+        // Close modal if callback provided
+        if (onSuccess) {
+          onSuccess();
+        }
+
+        // Redirect to dashboard
+        router.push("/dashboard");
       }
     } catch (error: any) {
-      toast.error(error.response?.data?.error || "Error during registration", {
+      toast.error(error.message || "Error during registration", {
         position: "top-center",
       });
     } finally {

@@ -2,6 +2,8 @@
 import "../styles/index.scss";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
+import { AuthProvider } from "@/context/AuthContext";
+import { ToastContainer } from "react-toastify";
 
 export default function RootLayout({
   children,
@@ -38,7 +40,10 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <div className="main-page-wrapper">
           <Provider store={store}>
-            {children}
+            <AuthProvider>
+              {children}
+              <ToastContainer position="top-center" />
+            </AuthProvider>
           </Provider>
         </div>
       </body>

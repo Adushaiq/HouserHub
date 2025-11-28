@@ -1,12 +1,14 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import { toast } from 'react-toastify';
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import Image from "next/image";
+import { useAuth } from "@/context/AuthContext";
+import { authService } from "@/services/api";
 
 import OpenEye from "@/assets/images/icon/icon_68.svg";
 
@@ -15,8 +17,14 @@ interface FormData {
    password: string;
 }
 
-const LoginForm = () => {
-   const router = useRouter(); 
+interface LoginFormProps {
+   onSuccess?: () => void;
+}
+
+const LoginForm = ({ onSuccess }: LoginFormProps) => {
+   const router = useRouter();
+   const { login } = useAuth();
+
    const schema = yup
       .object({
          email: yup.string().required().email().label("Email"),
@@ -28,23 +36,28 @@ const LoginForm = () => {
 
    const onSubmit = async (data: FormData) => {
       try {
-         const response = await fetch("http://localhost:5000/api/auth/login", { 
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-         });
+         // Use centralized auth service
+         const result = await authService.login(data);
 
-         const result = await response.json();
+         if (result.token) {
+            // Store token and user data
+            login(result.token, result.user);
 
-         if (response.ok) {
-            toast.success("Login successfully", { position: "top-center" });
+            toast.success("Login successful", { position: "top-center" });
             reset();
-            router.push("/dashboard/dashboard-index"); 
+
+            // Close modal if callback provided
+            if (onSuccess) {
+               onSuccess();
+            }
+
+            // Redirect to dashboard
+            router.push("/dashboard");
          } else {
             toast.error(result.message || "Invalid email or password");
          }
-      } catch (error) {
-         toast.error("An error occurred. Please try again.");
+      } catch (error: any) {
+         toast.error(error.message || "An error occurred. Please try again.");
       }
    };
 

@@ -1,6 +1,11 @@
 import NumberNiceSelect from "@/ui/NumberNiceSelect";
 
-const ListingDetails = () => {
+interface ListingDetailsProps {
+   formData: any;
+   onChange: (field: string, value: any) => void;
+}
+
+const ListingDetails = ({ formData, onChange }: ListingDetailsProps) => {
 
    const selectHandler = (e: any) => { };
 
@@ -11,7 +16,12 @@ const ListingDetails = () => {
             <div className="col-md-6">
                <div className="dash-input-wrapper mb-30">
                   <label htmlFor="">Size in ft*</label>
-                  <input type="text" placeholder="Ex: 3,210 sqft" />
+                  <input
+                     type="text"
+                     placeholder="Ex: 3,210 sqft"
+                     value={formData.size}
+                     onChange={(e) => onChange('size', e.target.value)}
+                  />
                </div>
             </div>
             <div className="col-md-6">
@@ -19,13 +29,13 @@ const ListingDetails = () => {
                   <label htmlFor="">Bedrooms*</label>
                   <NumberNiceSelect className="nice-select"
                      options={[
-                        { value: 1, text: 0 },
-                        { value: 2, text: 1 },
-                        { value: 3, text: 2 },
-                        { value: 4, text: 3 },
+                        { value: 0, text: 0 },
+                        { value: 1, text: 1 },
+                        { value: 2, text: 2 },
+                        { value: 3, text: 3 },
                      ]}
                      defaultCurrent={0}
-                     onChange={selectHandler}
+                     onChange={(e: any) => onChange('bedrooms', e.target.value)}
                      name=""
                      placeholder="" />
                </div>
@@ -35,13 +45,13 @@ const ListingDetails = () => {
                   <label htmlFor="">Bathrooms*</label>
                   <NumberNiceSelect className="nice-select"
                      options={[
-                        { value: 1, text: 0 },
-                        { value: 2, text: 1 },
-                        { value: 3, text: 2 },
-                        { value: 4, text: 3 },
+                        { value: 0, text: 0 },
+                        { value: 1, text: 1 },
+                        { value: 2, text: 2 },
+                        { value: 3, text: 3 },
                      ]}
                      defaultCurrent={0}
-                     onChange={selectHandler}
+                     onChange={(e: any) => onChange('bathrooms', e.target.value)}
                      name=""
                      placeholder="" />
                </div>
@@ -51,13 +61,13 @@ const ListingDetails = () => {
                   <label htmlFor="">Kitchens*</label>
                   <NumberNiceSelect className="nice-select"
                      options={[
-                        { value: 1, text: 0 },
-                        { value: 2, text: 1 },
-                        { value: 3, text: 2 },
-                        { value: 4, text: 3 },
+                        { value: 0, text: 0 },
+                        { value: 1, text: 1 },
+                        { value: 2, text: 2 },
+                        { value: 3, text: 3 },
                      ]}
                      defaultCurrent={0}
-                     onChange={selectHandler}
+                     onChange={(e: any) => onChange('kitchens', e.target.value)}
                      name=""
                      placeholder="" />
                </div>
@@ -73,7 +83,7 @@ const ListingDetails = () => {
                         { value: 4, text: 4 },
                      ]}
                      defaultCurrent={0}
-                     onChange={selectHandler}
+                     onChange={(e: any) => onChange('garages', e.target.value)}
                      name=""
                      placeholder="" />
                </div>
@@ -81,13 +91,23 @@ const ListingDetails = () => {
             <div className="col-md-6">
                <div className="dash-input-wrapper mb-30">
                   <label htmlFor="">Garage Size</label>
-                  <input type="text" placeholder="Ex: 1,230 sqft" />
+                  <input
+                     type="text"
+                     placeholder="Ex: 1,230 sqft"
+                     value={formData.garageSize}
+                     onChange={(e) => onChange('garageSize', e.target.value)}
+                  />
                </div>
             </div>
             <div className="col-md-6">
                <div className="dash-input-wrapper mb-30">
                   <label htmlFor="">Year Built*</label>
-                  <input type="text" placeholder="Type Year" />
+                  <input
+                     type="text"
+                     placeholder="Type Year"
+                     value={formData.yearBuilt}
+                     onChange={(e) => onChange('yearBuilt', e.target.value)}
+                  />
                </div>
             </div>
             <div className="col-md-6">
@@ -95,13 +115,13 @@ const ListingDetails = () => {
                   <label htmlFor="">Floors No*</label>
                   <NumberNiceSelect className="nice-select"
                      options={[
-                        { value: 1, text: 0 },
-                        { value: 2, text: 1 },
-                        { value: 3, text: 2 },
-                        { value: 4, text: 3 },
+                        { value: 0, text: 0 },
+                        { value: 1, text: 1 },
+                        { value: 2, text: 2 },
+                        { value: 3, text: 3 },
                      ]}
                      defaultCurrent={0}
-                     onChange={selectHandler}
+                     onChange={(e: any) => onChange('floorsNo', e.target.value)}
                      name=""
                      placeholder="" />
                </div>
@@ -109,7 +129,12 @@ const ListingDetails = () => {
             <div className="col-12">
                <div className="dash-input-wrapper">
                   <label htmlFor="">Description*</label>
-                  <textarea className="size-lg" placeholder="Write about property..."></textarea>
+                  <textarea
+                     className="size-lg"
+                     placeholder="Write about property..."
+                     value={formData.propertyDescription}
+                     onChange={(e) => onChange('propertyDescription', e.target.value)}
+                  ></textarea>
                </div>
             </div>
          </div>
